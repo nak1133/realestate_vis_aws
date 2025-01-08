@@ -29,7 +29,7 @@ jobs:
           cd ./aws/scraping
           mkdir package
           pip install -r requirements.txt -t ./package
-          cp scrap.py ./package
+          cp lambda_function.py ./package
           cd package
           zip -r lambda_function.zip .
           mv lambda_function.zip ../../../

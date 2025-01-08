@@ -49,7 +49,8 @@ jobs:
       - name: Invoke Lambda function
         run: |
           aws lambda invoke \
-            --function-name TestScraping
+            --function-name TestScraping \
+            output.json
       
       # Map表示のデプロイ
       # ECRにログイン

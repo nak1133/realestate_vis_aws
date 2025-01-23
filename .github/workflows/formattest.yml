@@ -21,11 +21,11 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run Test
+        env:
+          ID: ${{ github.actor }}
+          TEMP_ID: ${{ format("ID_{0}", ${{ github.actor }}
+          SECRET_ID: ${{ secrets[${{ format("ID_{0}", ${{ github.actor }}) }}] }}
         run: |
           echo "${{ github.actor }}"
-          export ID=${{ github.actor }}
-          echo $ID
-          echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
-          echo ${{ format("Test {0}", "test") }}
-          echo ${{ format("Test {0}", $ID) }}
-          echo ${{ format("Test {0}", "$ID") }}
+          echo "$ID"
+          echo "$TEMP_ID"
